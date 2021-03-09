@@ -34,5 +34,7 @@ jobs:
     runs-on: ${{ matrix.runner-os }}
 
     steps:
+      - uses: actions/checkout@v2
+      - run: dotnet dist/dotnet-xplat-action.dll
       - name: dotnet-docker-action
         uses: dylan-smith/dotnet-docker-action@main
