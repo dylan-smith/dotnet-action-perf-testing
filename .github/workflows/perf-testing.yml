@@ -1,0 +1,17 @@
+name: Performance Testing
+
+on:
+  workflow_dispatch:
+
+jobs:
+  dotnet-xplat-action:
+    strategy:
+      matrix:
+        runner-os: [windows-latest, ubuntu-latest, macos-latest]
+  
+    runs-on: ${{ matrix.runner-os }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: dotnet-xplat-action
+        uses: dylan-smith/dotnet-xplat-action@main
