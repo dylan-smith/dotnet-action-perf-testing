@@ -8,10 +8,11 @@ jobs:
     strategy:
       matrix:
         runner-os: [windows-latest, ubuntu-latest, macos-latest]
+        test-action: [dylan-smith/dotnet-xplat-action, dylan-smith/dotnet-selfcontained-action]
   
     runs-on: ${{ matrix.runner-os }}
 
     steps:
       - uses: actions/checkout@v2
       - name: dotnet-xplat-action
-        uses: dylan-smith/dotnet-xplat-action@main
+        uses: ${{ matrix.test-action }}@main
