@@ -35,6 +35,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: dotnet dist/dotnet-xplat-action.dll
+      - run: dotnet ${{ github.workspace }}/dist/dotnet-xplat-action.dll
       - name: dotnet-docker-action
         uses: dylan-smith/dotnet-docker-action@main
