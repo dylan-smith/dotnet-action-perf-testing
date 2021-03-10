@@ -27,11 +27,8 @@ jobs:
         uses: dylan-smith/dotnet-selfcontained-action@main
 
   dotnet-docker-action:
-    strategy:
-      matrix:
-        runner-os: [macos-latest]
   
-    runs-on: ${{ matrix.runner-os }}
+    runs-on: ubuntu-latest
 
     steps:
       - name: dotnet-docker-action
